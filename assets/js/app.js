@@ -1,3 +1,5 @@
+import { getBlurHashAverageColor } from './getBlurHash.js'
+
 document.addEventListener('DOMContentLoaded', () => {
   const gallery = document.querySelector('.gallery__list')
   const form = document.querySelector('.header__form')
@@ -14,10 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function render(data) {
     try {
       data.then(d => {
-        d.forEach(({ urls, links }, i) => {
+        d.forEach(({ urls, links, blur_hash }, i) => {
           const img = document.createElement('img')
           const a = document.createElement('a')
           const li = gallery.querySelector(`.gallery__item--${i + 1}`)
+          const rgbAverageColor = getBlurHashAverageColor(`${blur_hash}`)
+          li.style.backgroundColor = `rgb(${rgbAverageColor.join(',')})`
+
           a.classList.add('gallery__link')
           img.classList.add('gallery__img')
 
