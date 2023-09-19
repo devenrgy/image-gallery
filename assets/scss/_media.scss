@@ -1,0 +1,27 @@
+@media screen and (max-width: 930px) {
+  .gallery {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 400px;
+    }
+
+    &__item {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .gallery {
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+      grid-auto-rows: 500px;
+    }
+
+    &__item {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+}

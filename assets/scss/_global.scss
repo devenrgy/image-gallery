@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+input {
+  font-family: inherit;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
