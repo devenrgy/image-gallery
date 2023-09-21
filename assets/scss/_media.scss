@@ -1,4 +1,4 @@
-@media screen and (max-width: 930px) {
+@media screen and (width < 930px) {
   .gallery {
     &__list {
       grid-template-columns: repeat(3, 1fr);
@@ -12,7 +12,7 @@
   }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (width < 670px) {
   .gallery {
     &__list {
       grid-template-columns: repeat(1, 1fr);
@@ -22,6 +22,16 @@
     &__item {
       grid-column: auto;
       grid-row: auto;
+    }
+  }
+}
+
+@media screen and (width < 400px) {
+  .search {
+    width: 100%;
+
+    &__input {
+      width: 100%;
     }
   }
 }
