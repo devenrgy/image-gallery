@@ -3,6 +3,7 @@ import { getBlurHashAverageColor } from './getBlurHash.js'
 document.addEventListener('DOMContentLoaded', () => {
   const gallery = document.querySelector('.gallery__list')
   const form = document.querySelector('.header__form')
+  const searchInput = document.querySelector('.search__input')
 
   async function getDataImages(q = '') {
     try {
@@ -43,6 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', (evt) => {
     evt.preventDefault()
     const { searchKeyword } = Object.fromEntries(new FormData(evt.target))
+    if (searchKeyword.trim().length > 0) {
+      render(getDataImages(searchKeyword))
+    }
+  })
+
+  searchInput.addEventListener('change', () => {
+    const searchKeyword = searchInput.value
     if (searchKeyword.trim().length > 0) {
       render(getDataImages(searchKeyword))
     }
